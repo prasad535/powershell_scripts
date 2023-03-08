@@ -21,8 +21,8 @@ $subject = "RU Report & F3 License Users"+"-"+$short_month+$year
 $body = "Hello,`n`nPlease find the attached RU consumption report for the month including F3 users data file.`n`nRegards,`nTCS Messaging & services"
 
 #Collect Data from exchange online into csv
-Get-MsolUser -All | Where-Object {$_.licenses.accountskuid -like '*yara:ENTERPRISEPACK*' -and $_.title -notlike '*TCS*'} | select DisplayName, @{Name = 'Licenses.AccountSkuId'; Expression = {$_.Licenses.Accountskuid}},Userprincipalname,@{Name = 'WhenCreated'; Expression = {[datetime]::Parse($_.WhenCreated).ToString('dd/MM/yyyy')}},title,office,usagelocation,country,Department,City | Export-csv $report -NoTypeInformation -Encoding Unicode
-Get-MsolUser -All | Where-Object {$_.licenses.accountskuid -eq 'yara:SPE_F1' -and $_.title -notlike '*TCS*'} | select DisplayName, @{Name = 'Licenses.AccountSkuId'; Expression = {$_.Licenses.Accountskuid}},Userprincipalname,@{Name = 'WhenCreated'; Expression = {[datetime]::Parse($_.WhenCreated).ToString('dd/MM/yyyy')}},title,office,usagelocation,country,Department,City | Export-csv $licensef -NoTypeInformation -Encoding Unicode
+Get-MsolUser -All | Where-Object {$_.licenses.accountskuid -like '*page:ENTERPRISEPACK*' -and $_.title -notlike '*TCS*'} | select DisplayName, @{Name = 'Licenses.AccountSkuId'; Expression = {$_.Licenses.Accountskuid}},Userprincipalname,@{Name = 'WhenCreated'; Expression = {[datetime]::Parse($_.WhenCreated).ToString('dd/MM/yyyy')}},title,office,usagelocation,country,Department,City | Export-csv $report -NoTypeInformation -Encoding Unicode
+Get-MsolUser -All | Where-Object {$_.licenses.accountskuid -eq 'page:SPE_F1' -and $_.title -notlike '*TCS*'} | select DisplayName, @{Name = 'Licenses.AccountSkuId'; Expression = {$_.Licenses.Accountskuid}},Userprincipalname,@{Name = 'WhenCreated'; Expression = {[datetime]::Parse($_.WhenCreated).ToString('dd/MM/yyyy')}},title,office,usagelocation,country,Department,City | Export-csv $licensef -NoTypeInformation -Encoding Unicode
 
 # Convert csv to excel format
 $data = Import-Csv -Path $report -Delimiter ',' 

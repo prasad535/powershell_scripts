@@ -21,9 +21,9 @@ function findMember ($UserName, $GroupName){
 $Group1 = "Non Personal E3";
 $Group2 = "Non Personal EOP";
 $Group3 = "Non Personal F3";
-$KioskPath = "OU=Kiosk,OU=Users,OU=Polaris,DC=ad,DC=yara,DC=com";
-$RoboticsPath = "OU=Robotics,OU=Users,OU=Polaris,DC=ad,DC=yara,DC=com";
-$SharedPath = "OU=Robotics,OU=Users,OU=Polaris,DC=ad,DC=yara,DC=com";
+$KioskPath = "OU=Kiosk,OU=Users,OU=Polaris,DC=ad,DC=page,DC=com";
+$RoboticsPath = "OU=Robotics,OU=Users,OU=Polaris,DC=ad,DC=page,DC=com";
+$SharedPath = "OU=Robotics,OU=Users,OU=Polaris,DC=ad,DC=page,DC=com";
 
 $kiosk =KioskUsers $KioskPath
 $robotics = RoboticsUsers $RoboticsPath

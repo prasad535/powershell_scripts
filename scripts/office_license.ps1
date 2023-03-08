@@ -55,7 +55,7 @@ Close-ExcelPackage -ExcelPackage $Excel
 
 #$Excel | Export-Excel -Path $report_excel_final -PassThru -BoldTopRow
 
-Send-MailMessage -SmtpServer smtp.ad.yara.com -From DL-TCS-Messaging-Services@yara.com -To Jeffrey.felter@yara.com,peter.craps@yara.com -Cc Roger.Skauen@yara.com,Timothy.Lauryssens@yara.com,olav.lerbrekk@yara.com,DL-TCS-Messaging-Services@yara.com,DL-TCS-IAM-Services@yara.com,DL-TCS-ITWP-Services@yara.com,oystein.santi@yara.com,michael.cercleron@yara.com,Gilda.Potgieter@yara.com,Reijo.Koivistoinen@yara.com -Subject $subject -Credential $credential -Priority High -Encoding Unicode -Attachments $report_excel -Body $body
+Send-MailMessage -SmtpServer smtp.ad.page.com -From '' -Subject $subject -Credential $credential -Priority High -Encoding Unicode -Attachments $report_excel -Body $body
 Start-Sleep 15
 Remove-item -Path $report -Force -Confirm:$false
 Remove-item -Path $report_excel -Force -Confirm:$false

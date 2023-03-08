@@ -1,5 +1,5 @@
 ﻿$server = ''
-$User = 'automate'
+$User = ''
 $Password = ''
 
 $SNowUser = $User

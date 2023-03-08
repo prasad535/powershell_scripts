@@ -16,7 +16,7 @@ $auditlogData = Search-UnifiedAuditLog -ResultSize 5000 -StartDate $starDate -En
 $result = $auditlogData.AuditData | ConvertFrom-Json | select CreationTime,operation,AppName,Workload,AdditionalInfo
 $result2 = $auditlogData.AuditData | ConvertFrom-Json | select CreationTime,operation,AppName,Workload,AdditionalInfo | Export-Csv -NoTypeInformation -Path $location -Append 
 }
-$body = "Dear Amund,`n`nAs requested, please find the PowerApps weekly audit log report.`n`nRegards,`nTCS Messaging & Collaboration Team"
+$body = "Dear ,`n`nAs requested, please find the PowerApps weekly audit log report.`n`nRegards,`n Messaging & Collaboration Team"
 $newdata = Import-Csv -Path $location | Select-Object * -skiplast 1 | Sort-Object -Unique CreationTime 
 Remove-Item -Path $location -Force -Confirm:$false
 $newdata | Export-Csv -Path $location -NoTypeInformation -Encoding Unicode -Force -Append

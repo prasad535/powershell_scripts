@@ -10,7 +10,7 @@ $output>>$filepath
 # loop to process each excel file
 foreach($file in $files){
     $XL = New-Object -comobject Excel.Application
-    $sp = "https://yara.sharepoint.com/teams/SiteITDocumentation/Documents/"
+    $sp = "https://page.sharepoint.com/teams/SiteITDocumentation/Documents/"
     $directory = $file.DirectoryName
 
     # to get site ID from folder name

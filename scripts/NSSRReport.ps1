@@ -10,4 +10,4 @@ $auditlogData = Search-UnifiedAuditLog -StartDate $starDate -EndDate $endDate -R
 $result = $auditlogData.AuditData | ConvertFrom-Json | Select-Object CreationTime,operation,AppName,Workload,AdditionalInfo 
 $result2 = $auditlogData.AuditData | ConvertFrom-Json | Select-Object CreationTime,operation,AppName,Workload,AdditionalInfo | Export-Csv -Path "C:\Temp\NSSRReport.csv" 
 }
-Send-MailMessage -SmtpServer smtp.ad.yara.com -From prasad.nagineni@yara.com -To kavuuri.harshini@yara.com -Cc prasad.nagineni@yara.com -Subject "NSSR Report -Test" -Credential $credential -Priority High -Encoding ASCII -Attachments "C:\Temp\NSSRReport.csv"
+Send-MailMessage -SmtpServer smtp.ad.yara.com -From  -To -Cc -Subject "NSSR Report -Test" -Credential $credential -Priority High -Encoding ASCII -Attachments "C:\Temp\NSSRReport.csv"

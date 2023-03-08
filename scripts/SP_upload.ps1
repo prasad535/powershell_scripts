@@ -8,7 +8,7 @@ $webclient.Credentials = $credentials
 $webclient.UploadFile($destination + "/" + $File.Name, "PUT", $File.FullName)
 }
 
-$destination = "https://yara-my.sharepoint.com/personal/c053950_yara_com/_layouts/15/onedrive.aspx"
+$destination = "https://page-my.sharepoint.com/personal/c053950_yara_com/_layouts/15/onedrive.aspx"
 $fileName = "C:\temp\NSSRReport.csv"
 $userName = ""
 $securePasssword = ""
